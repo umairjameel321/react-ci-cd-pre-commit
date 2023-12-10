@@ -29,11 +29,17 @@ jobs:
         # main is the branch name where new code is pushed
         if: github.ref == 'refs/heads/main'
 
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          # publish_branch: prod-gh-pages  // by default it will create gh-pages branch and push everything of dist folder inside it.
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
+
+
+        # uses: peaceiris/actions-gh-pages@v3
+        # with:
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
+        #   publish_dir: ./dist
+        # publish_branch: prod-gh-pages  // by default it will create gh-pages branch and push everything of dist folder inside it.
 
     # - name: Deploy to dev url
     #   if: github.ref == 'refs/heads/develop'
