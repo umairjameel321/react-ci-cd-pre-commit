@@ -31,3 +31,8 @@ jobs:
 
       - name: Run format check
         run: npm run format
+
+      - name: Check commit messages
+        uses: wagoid/commitlint-github-action@v3
+        with:
+          configFile: commitlint.config.cjs
