@@ -34,17 +34,22 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
 
+# it might through permission error during deployment,
+# go the repo settings, Action > General > Workflow permissions
+# and select Read and Write permissions
+# click save,
+# re-run jobs and it should fix the error
 
-        # uses: peaceiris/actions-gh-pages@v3
-        # with:
-        #   github_token: ${{ secrets.GITHUB_TOKEN }}
-        #   publish_dir: ./dist
-        # publish_branch: prod-gh-pages  // by default it will create gh-pages branch and push everything of dist folder inside it.
+# uses: peaceiris/actions-gh-pages@v3
+# with:
+#   github_token: ${{ secrets.GITHUB_TOKEN }}
+#   publish_dir: ./dist
+# publish_branch: prod-gh-pages  // by default it will create gh-pages branch and push everything of dist folder inside it.
 
-    # - name: Deploy to dev url
-    #   if: github.ref == 'refs/heads/develop'
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: ./dist
-    #     # publish_branch: dev-gh-pages
+# - name: Deploy to dev url
+#   if: github.ref == 'refs/heads/develop'
+#   uses: peaceiris/actions-gh-pages@v3
+#   with:
+#     github_token: ${{ secrets.GITHUB_TOKEN }}
+#     publish_dir: ./dist
+#     # publish_branch: dev-gh-pages
